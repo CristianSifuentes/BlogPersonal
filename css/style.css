@@ -8,7 +8,8 @@
 }
 
 body {
-    font-family: var(--fuenteSecundaria);
+    font-family: var(--fuentePrincipal);
+    background: #f4f8fb;
 }
 
 .contenedor {
@@ -29,72 +30,115 @@ h3 {
     font-size: 2.4rem;
 }
 
-p{
-  font-family: var(--fuentePrincipal);
-  font-size: 1.2rem;
-  line-height: 2rem;
+p {
+    font-size: 1.2rem;  
+    line-height: 2rem;
 }
-img{
-    width: 100%;
-}
-/**/
 .hero {
     background-image: url(../img/fondo.jpg);
-    height: 100vh; /*??***/
     background-repeat: no-repeat;
-    background-size: cover; /*???*/
-    
+    height: 100vh;
+    background-size: cover;
 }
 .hero .contenedor{
     display: grid;
-    align-content: center;
     height: 100vh;
-
+    align-content: center;
 }
 .hero .contenido {
     text-align: center;
     color: var(--claro);
 }
-
-.titulo{
-    margin: 0;
-}
-
-.subtitulo {
-    font-size: 1.6rem;
-}
-
-/*Servicios*/
-
-.servicios{
+/* Servicios */
+.servicios {
     text-align: center;
     margin-top: 3rem;
 }
-
-
-.servicios h2{
+.servicios h2 {
     padding-bottom: .5rem;
 }
-
 .servicios h2::after {
-    height: 0.5rem;
+    height: .02rem;
     width: 7rem;
-    background-color: var(--primario);
-    content: '';
+    background-color:var(--primario);
+    padding-bottom: .5rem;
     display: block;
+    content:'';
     margin: 1rem auto 0 auto;
 }
-
-.servicios i{
+.servicios i {
     font-size: 3rem;
     color: var(--secundario);
-
 }
 
-@media (min-width: 768px){
-    .servicios{
+.servicio{
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    transition: all .5s ease;
+}
+.servicio:hover  {
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease;
+    transform: translate3D(0,-1px,0) scale(1.02);
+}
+
+.elemento {
+
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    transition: all .5s ease;
+}
+
+@media (min-width:768px) {
+    .servicios {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-column-gap: 2rem;
+        grid-gap: 3rem;
     }
 }
+
+/** Portafolio**/
+
+@media (min-width:768px) { 
+    .listado {
+        display: grid;
+        grid-auto-rows: max-content;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+    }
+    .elemento:nth-child(3) {
+        grid-row-end: span 2;
+    }
+}
+
+
+/** Footer */
+
+.footer {
+    background-image: url(../img/contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    color: var(--claro);
+}
+@media (min-width:768px) {
+    .footer {
+        height: 350px;
+        display: grid;
+        align-content: center;
+    }
+    .footer .contenedor {
+        display: grid;
+        grid-template-columns: 30% 30% auto;
+    }
+}
+
+
+/*
+box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease;
+    transform: translate3D(0,-1px,0) scale(1.02);
+
+*/
